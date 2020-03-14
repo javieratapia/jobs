@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../model/style.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <title>TI Jobs</title>
+</head>
+<body>
+    <h1>Jobs</h1>
+
+    <label>Seleccione método de busqueda</label>
+    <select id="tipoBusqueda">
+        <option value="vacio" selected>Selecciona</option>
+        <option value="ubi">Ubicación</option>
+        <option value="lat">Latitud y Longitud</option>
+
+    </select>
+
+    <div id="formubi">
+        <label>Ingrese una ubicación</label>
+        <input type="text" id="ubicacion" placeholder="Los Angeles">
+    </div>
+    
+    <div id="formlat">
+        <label>Ingrese latitud</label>
+        <input type="text" id="lat" placeholder="37.3229978">
+        <label>Ingrese longitud</label>
+        <input type="text" id="lon" placeholder="-122.0321823">
+    </div>
+
+    <div id="fulltime">
+        <label>Sólo Fulltime</label>
+        <input type="checkbox" id="fulltime">
+    </div>
+
+    
+    <button type="submit" id="filtro">Buscar</button>
+    
+  
+
+    <script src="../controller/script.js"></script>
+</body>
+</html>
