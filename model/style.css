@@ -1,0 +1,36 @@
+
+
+
+img{
+width: 10rem;
+
+}
+
+.card-header{
+    background-color: white!important;
+}
+
+select,.input-group{
+    width: 25%!important;
+    
+}
+
+
+
+.medidas{
+    width: 25%!important;
+}
+
+.enlinea{
+    display: flex;
+}
+
+@media (min-width: 320px) {
+
+.enlinea{
+    display: block;
+}
+.lado{
+    margin: 0;
+}
+}

@@ -1,45 +1,110 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../model/style.css">
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-    <title>TI Jobs</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <title>TI Jobs</title>
 </head>
+
 <body>
-    <h1>Jobs</h1>
-
-    <label>Seleccione método de busqueda</label>
-    <select id="tipoBusqueda">
-        <option value="vacio" selected>Selecciona</option>
-        <option value="ubi">Ubicación</option>
-        <option value="lat">Latitud y Longitud</option>
-
-    </select>
-
-    <div id="formubi">
-        <label>Ingrese una ubicación</label>
-        <input type="text" id="ubicacion" placeholder="Los Angeles">
-    </div>
     
-    <div id="formlat">
-        <label>Ingrese latitud</label>
-        <input type="text" id="lat" placeholder="37.3229978">
-        <label>Ingrese longitud</label>
-        <input type="text" id="lon" placeholder="-122.0321823">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Jobs_movie_logo.jpg" class="logo"alt="">
+
+    <form action="" class="mx-auto">
+        <div class="input-group-prepend ml-4 mt-4">
+            <span class="input-group-text busqueda" id="basic-addon3">Tipo de Búsqueda</span>
+            <select class="custom-select" id="tipoBusqueda">
+                <option value="vacio" selected>Seleccionar</option>
+                <option value="ubi">Ubicación</option>
+                <option value="lat">Latitud y Longitud</option>
+            </select>
+        </div>
+
+ <!--         
+        <label class="busqueda ml-4 mt-4">Seleccione método de busqueda</label>
+        <select id="tipoBusqueda" class="form-control">
+            <option value="vacio" selected>Selecciona</option>
+            <option value="ubi">Ubicación</option>
+            <option value="lat">Latitud y Longitud</option>
+
+        </select>
+-->
+        <div class="input-group mb-3 ml-4 mt-4" id="formubi">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon3">Ingrese una ubicación</span>
+            </div>
+            <input type="text" class="form-control" id="ubicacion" aria-describedby="basic-addon3" placeholder="Los Angeles">
+          </div>
+
+<!--
+        <div id="formubi">
+            <label class="ml-4 mt-4">Ingrese una ubicación</label>
+            <input type="text" id="ubicacion" class="mr-2" placeholder="Los Angeles">
+        </div>
+-->
+
+        <div class=" mb-3 ml-4 mt-4 enlinea" id="formlat">
+            <div class="input-group-prepend ">
+            <span class="input-group-text" id="basic-addon3">Ingrese latitud</span>
+            </div>
+            <input type="text" class="form-control medidas" id="lat" aria-describedby="basic-addon3" placeholder="37.3229978">
+            <div class="input-group-prepend ml-4 lado">
+                <span class="input-group-text" id="basic-addon3">Ingrese longitud</span>
+            </div>
+            <input type="text" class="form-control medidas" id="lon" aria-describedby="basic-addon3" placeholder="-122.0321823">
+        </div>
+<!--
+        <div id="formlat">
+            <label class="ml-4 mt-4">Ingrese latitud</label>
+            <input type="text" id="lat" class="mr-2p"laceholder="37.3229978">
+            <label class="ml-4 mt-4">Ingrese longitud</label>
+            <input type="text" id="lon"  class="mr-2p"placeholder="-122.0321823">
+        </div>
+-->
+        <div class="input-group-prepend ml-4 mt-4" id="fulltime">
+            <span class="input-group-text" id="basic-addon3">Sólo Fulltime</span>
+            <div class="input-group-text">
+                <input type="checkbox" id="fulltime"  class="mr-2p">
+            </div>
+        </div>
+<!--        
+        <div id="fulltime">
+            <label class="ml-4 mt-4">Sólo Fulltime</label>
+            <input type="checkbox" id="fulltime"  class="mr-2p">
+        </div>
+-->
+        <div id="boton" class="mt-4">
+            <button type="button" id="filtro" class="btn btn-dark ml-4">Buscar</button>
+        </div>
+
+    </form>
+
+
+    <br>
+
+    <div id="lista">
+
     </div>
 
-    <div id="fulltime">
-        <label>Sólo Fulltime</label>
-        <input type="checkbox" id="fulltime">
-    </div>
+   
+
 
     
-    <button type="submit" id="filtro">Buscar</button>
-    
-  
+
+
+
+
+
 
     <script src="../controller/script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 </body>
+
 </html>
